@@ -1,28 +1,30 @@
-# aa-stats
+# JettaStats
 
-This is a more elaborate and quite functional sample app for Android Auto SDK,
-featuring reading telemetry data from the car, using the Vendor Extensions channel.
+This is a customized app designed for EU VW Jetta, based on AAStats ( https://github.com/martoreto/aastats )
 
-It can:
+Using :
 
-* display power, torque, boost, gear, oil temp., gearbox temp., battery voltage in this layout:
+https://github.com/martoreto/aauto-sdk (The piece of code which made OEM apps for AndroidAuto possible in the first place - Good Job!)
 
-  ![screenshot](media/screenshot1.png)
-  
-  (of course it's not hard to change!)
-  
+https://github.com/martoreto/aauto-vex-vag ( Used for reading telemetry data from the car, using the Vendor Extensions channel. )
+
+
+
+
+* display gauges for rpm / speed , oil temp., outside temp. , current gear.
+
 * log all the available telemetry to storage in JSON format,
-
-* upload logs to Google BigQuery,
 
 * notify when oil reaches operating temperature,
 
 * beep when maneuvering and the steering wheel crosses zero angle.
 
-## Requirements
+* notify when car recommends shifting gear ( up or down ) - in progress
+
+## Requirements ( From @martoreto AAStats)
 
 1. You need to build it yourself. ;)
 
    * You also need to rename the application package name (in ``app/build.gradle``) and [obtain ``google-services.json``](https://developers.google.com/mobile/add), and put it in ``app/``.
 
-1. And also install the appropriate aa-vex-* .apk for your car brand (which means initially only VAG cars are supported).
+1. Install the aa-vex-vag.apk ( https://github.com/martoreto/aauto-vex-vag )
