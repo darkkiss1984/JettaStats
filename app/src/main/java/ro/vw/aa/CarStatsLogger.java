@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
@@ -31,7 +32,7 @@ public class CarStatsLogger implements CarStatsClient.Listener {
     private static final String TAG = "CarStatsLogger";
 
     private static final DateFormat LOG_FILENAME_DATE_FORMAT =
-            new SimpleDateFormat("yyyyMMdd", Locale.US);
+            new SimpleDateFormat("yyyyMMddHHmmss", Locale.US);
     private static final DateFormat JSON_DATE_FORMAT;
 
     private static final int AUTO_SYNC_TIMEOUT_MS = 60000;
@@ -140,13 +141,15 @@ public class CarStatsLogger implements CarStatsClient.Listener {
         }
 
         String formattedDate = LOG_FILENAME_DATE_FORMAT.format(new Date());
-        mLogFile = new File(getLogsDir(), mPrefix + "-" + formattedDate + ".log.gz");
-        mLogWriter = new OutputStreamWriter(new GZIPOutputStream(new FileOutputStream(mLogFile,true)),
+        mLogFile = new File(getLogsDir(), mPrefix + "-" + formattedDate + ".log");
+        mLogWriter = new OutputStreamWriter(new FileOutputStream(mLogFile,true),
                 StandardCharsets.UTF_8);
+
         Log.i(TAG, "Started log file: " + mLogFile.getAbsolutePath());
     }
 
     public synchronized void close() {
+        Log.i(TAG, "Logger stopping.");
         if (mLogWriter != null) {
             try {
                 mLogWriter.flush();
@@ -165,6 +168,8 @@ public class CarStatsLogger implements CarStatsClient.Listener {
             mLogWriter = null;
             mLogFile = null;
             mHandler.removeCallbacks(mSync);
+        } else {
+            Log.i(TAG,"mLogWriter is already null");
         }
     }
 

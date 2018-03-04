@@ -144,7 +144,7 @@ public class LogUploadService extends JobService {
 
                 // Detect schema.
                 BufferedReader reader = new BufferedReader(new InputStreamReader(
-                        new GZIPInputStream(new FileInputStream(mLogFile)), StandardCharsets.UTF_8));
+                        new FileInputStream(mLogFile), StandardCharsets.UTF_8));
                 String line;
                 JsonParser jsonParser = new JsonParser();
                 Set<String> fieldNames = new HashSet<>();

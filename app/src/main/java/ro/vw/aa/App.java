@@ -48,14 +48,8 @@ public class App extends Application {
 
         if ( isExternalStorageWritable() ) {
 
-            File appDirectory = new File( Environment.getExternalStorageDirectory() + "/Carlogs" );
-            File logDirectory = new File( appDirectory + "/log" );
+            File logDirectory = new File( Environment.getExternalStorageDirectory() + "/Carlogcat");
             File logFile = new File( logDirectory, "logcat" + System.currentTimeMillis() + ".txt" );
-
-            // create app folder
-            if ( !appDirectory.exists() ) {
-                appDirectory.mkdir();
-            }
 
             // create log folder
             if ( !logDirectory.exists() ) {

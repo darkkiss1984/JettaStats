@@ -69,8 +69,8 @@
             android:dependency="uploadToBigquery"
             android:title="@string/pref_bigquery_reupload_last_title" />
         <Preference
-            android:key="kickUploads"
             android:dependency="uploadToBigquery"
+            android:key="kickUploads"
             android:title="@string/pref_kick_uploads_title" />
     </PreferenceCategory>
 </PreferenceScreen>
