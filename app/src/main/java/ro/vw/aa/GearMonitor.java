@@ -22,9 +22,9 @@ import java.util.Map;
 public class GearMonitor implements CarStatsClient.Listener {
     private static final String TAG = "GearMonitor";
 
-    public static final String PREF_ENABLED = "gearMonitoringActive";
-    public static final String EXLAP_KEY_CURRENT_GEAR = "currentGear";
-    public static final String EXLAP_KEY_RECOMMENDED_GEAR = "recommendedGear";
+    private static final String PREF_ENABLED = "gearMonitoringActive";
+    private static final String EXLAP_KEY_CURRENT_GEAR = "currentGear";
+    private static final String EXLAP_KEY_RECOMMENDED_GEAR = "recommendedGear";
 
     private static final int NOTIFICATION_ID = 2;
 
@@ -46,7 +46,7 @@ public class GearMonitor implements CarStatsClient.Listener {
 
     private State mState = State.UNKNOWN;
 
-    public GearMonitor(Context context, Handler handler) {
+    GearMonitor(Context context, Handler handler) {
         super();
 
         mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -82,26 +82,6 @@ public class GearMonitor implements CarStatsClient.Listener {
     };
 
     private void notifyGearChange(String currentGear, String recommendedGear) {
-        String title = mContext.getString(R.string.gear_change_notification_title);
-        String text = mContext.getString(R.string.gear_change_notification_text);
-        text += "From " + currentGear + " to " + recommendedGear+ " !";
-        Notification notification = new NotificationCompat.Builder(mContext)
-                .setSmallIcon(R.drawable.ic_car_wheel)
-                .setContentTitle(title)
-                .setContentText(text)
-                .setAutoCancel(true)
-                .extend(new CarNotificationExtender.Builder()
-                        .setTitle(title)
-                        .setSubtitle(text)
-                        .setActionIconResId(R.drawable.ic_check_white_24dp)
-                        .setThumbnail(CarUtils.getCarBitmap(mContext, R.drawable.ic_gearbox,
-                                R.color.car_primary, 128))
-                        .setShouldShowAsHeadsUp(true)
-                        .build())
-                .build();
-        mNotificationManager.notify(TAG, NOTIFICATION_ID, notification);
-        mHandler.postDelayed(mDismissNotification, NOTIFICATION_TIMEOUT_MS);
-
         CarNotificationSoundPlayer soundPlayer = new CarNotificationSoundPlayer(mContext, R.raw.bubble);
         soundPlayer.play();
     }

@@ -24,17 +24,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        /**
-         * Logging level for HTTP requests/responses.
-         *
-         * <p>
-         * To turn on, set to {@link Level#CONFIG} or {@link Level#ALL} and run this from command line:
-         * </p>
-         *
-         * <pre>
-         adb shell setprop log.tag.HttpTransport DEBUG
-         * </pre>
-         */
         Logger.getLogger("com.google.api.client").setLevel(Level.OFF);
 
         PreferenceManager.setDefaultValues(this, R.xml.settings, false);
@@ -46,54 +35,10 @@ public class App extends Application {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
         mCredential.setSelectedAccountName(settings.getString(App.PREF_ACCOUNT_NAME, null));
 
-        if ( isExternalStorageWritable() ) {
-
-            File logDirectory = new File( Environment.getExternalStorageDirectory() + "/Carlogcat");
-            File logFile = new File( logDirectory, "logcat" + System.currentTimeMillis() + ".txt" );
-
-            // create log folder
-            if ( !logDirectory.exists() ) {
-                logDirectory.mkdir();
-            }
-
-            // clear the previous logcat and then write the new one to the file
-            try {
-                Process process = Runtime.getRuntime().exec("logcat -c");
-                process = Runtime.getRuntime().exec("logcat -f " + logFile);
-            } catch ( IOException e ) {
-                e.printStackTrace();
-            }
-
-        } else if ( isExternalStorageReadable() ) {
-            // only readable
-        } else {
-            // not accessible
-        }
-
-
-    }
+      }
 
     public GoogleAccountCredential getGoogleCredential() {
         return mCredential;
-    }
-
-    /* Checks if external storage is available for read and write */
-    public boolean isExternalStorageWritable() {
-        String state = Environment.getExternalStorageState();
-        if ( Environment.MEDIA_MOUNTED.equals( state ) ) {
-            return true;
-        }
-        return false;
-    }
-
-    /* Checks if external storage is available to at least read */
-    public boolean isExternalStorageReadable() {
-        String state = Environment.getExternalStorageState();
-        if ( Environment.MEDIA_MOUNTED.equals( state ) ||
-                Environment.MEDIA_MOUNTED_READ_ONLY.equals( state ) ) {
-            return true;
-        }
-        return false;
     }
 
 }

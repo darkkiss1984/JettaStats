@@ -21,15 +21,9 @@ public class MainCarActivity extends CarActivity {
         carUiController.getStatusBarController().showTitle();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        CarFragment fragment = new DashboardFragment();
-        fragmentManager.beginTransaction()
-                .add(R.id.fragment_container, fragment)
-                .commitNow();
 
         MenuController menuController = getCarUiController().getMenuController();
         menuController.hideMenuButton();
 
-        StatusBarController statusBarController = getCarUiController().getStatusBarController();
-        fragment.setupStatusBar(statusBarController);
     }
 }
