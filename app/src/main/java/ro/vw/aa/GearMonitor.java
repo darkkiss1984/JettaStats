@@ -31,8 +31,7 @@ public class GearMonitor implements CarStatsClient.Listener {
     private static final int NOTIFICATION_TIMEOUT_MS = 60000;
 
     private final Handler mHandler;
-    private final NotificationManager mNotificationManager;
-
+    private CarNotificationSoundPlayer mNotificationPlayer;
     private final Context mContext;
     private boolean mIsEnabled;
 
@@ -49,9 +48,10 @@ public class GearMonitor implements CarStatsClient.Listener {
     GearMonitor(Context context, Handler handler) {
         super();
 
-        mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mHandler = handler;
         mContext = context;
+
+        mNotificationPlayer = new CarNotificationSoundPlayer(context, R.raw.beep);
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         sharedPreferences.registerOnSharedPreferenceChangeListener(mPreferencesListener);
@@ -61,7 +61,6 @@ public class GearMonitor implements CarStatsClient.Listener {
     private void readPreferences(SharedPreferences preferences) {
         mIsEnabled = preferences.getBoolean(PREF_ENABLED, true);
         if (!mIsEnabled) {
-            mHandler.post(mDismissNotification);
             mState = State.UNKNOWN;
         }
     }
@@ -72,19 +71,6 @@ public class GearMonitor implements CarStatsClient.Listener {
             readPreferences(sharedPreferences);
         }
     };
-
-    private final Runnable mDismissNotification = new Runnable() {
-        @Override
-        public void run() {
-            Log.d(TAG, "Dismissing gear change notification");
-            mNotificationManager.cancel(TAG, NOTIFICATION_ID);
-        }
-    };
-
-    private void notifyGearChange(String currentGear, String recommendedGear) {
-        CarNotificationSoundPlayer soundPlayer = new CarNotificationSoundPlayer(mContext, R.raw.bubble);
-        soundPlayer.play();
-    }
 
     @Override
     public void onNewMeasurements(String provider, Date timestamp, Map<String, Object> values) {
@@ -99,20 +85,25 @@ public class GearMonitor implements CarStatsClient.Listener {
                 mState = State.UNKNOWN;
             } else if (mState == State.UNKNOWN && !currentGear.equalsIgnoreCase(recommendedGear) && !"NoRecommendation".equalsIgnoreCase(recommendedGear)) {
                 mState = State.CHANGE_NEEDED;
-                notifyGearChange(currentGear,recommendedGear);
+                beepGearChange();
             } else if (mState == State.UNKNOWN) {
                 mState = State.CHANGE_NOT_NEEDED;
             } else if (mState == State.CHANGE_NOT_NEEDED && !currentGear.equalsIgnoreCase(recommendedGear) && !"NoRecommendation".equalsIgnoreCase(recommendedGear)) {
                 mState = State.CHANGE_NEEDED;
-                notifyGearChange(currentGear,recommendedGear);
+                beepGearChange();
             } else if (mState == State.CHANGE_NEEDED && (currentGear.equalsIgnoreCase(recommendedGear) || !"NoRecommendation".equalsIgnoreCase(recommendedGear))) {
                 mState = State.CHANGE_NOT_NEEDED;
             }
         }
     }
 
+    private void beepGearChange() {
+        if (mIsEnabled) {
+            mNotificationPlayer.play();
+        }
+    }
     public synchronized void close() {
-        mHandler.post(mDismissNotification);
+
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
         sharedPreferences.unregisterOnSharedPreferenceChangeListener(mPreferencesListener);
 

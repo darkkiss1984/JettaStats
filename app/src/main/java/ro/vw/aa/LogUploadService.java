@@ -164,6 +164,8 @@ public class LogUploadService extends JobService {
                         fieldSchema.setName(key);
                         if (key.toLowerCase().contains("timestamp")) {
                             fieldSchema.setType("TIMESTAMP");
+                        } else if (key.contains("Name")) {
+                            fieldSchema.setType("STRING");
                         } else if (value.isBoolean()) {
                             fieldSchema.setType("BOOLEAN");
                         } else if (value.isNumber()) {
@@ -186,7 +188,7 @@ public class LogUploadService extends JobService {
                 String datasetId = preferences.getString(PREF_BIGQUERY_DATASET, "");
                 String tablePrefix = preferences.getString(PREF_BIGQUERY_TABLE, "aastats");
                 String dateSuffix = TABLE_SUFFIX_DATE_FORMAT.format(new Date(mJobParameters.getJobId() * 1000L));
-                String tableId = tablePrefix + "$" + dateSuffix;
+                String tableId = tablePrefix;
                 FileContent content = new FileContent(MediaType.JSON_UTF_8.toString(), mLogFile);
                 Job job = new Job().setConfiguration(
                         new JobConfiguration().setLoad(
@@ -194,6 +196,7 @@ public class LogUploadService extends JobService {
                                         .setSourceFormat("NEWLINE_DELIMITED_JSON")
                                         .setSchema(schema)
                                         .setWriteDisposition("WRITE_APPEND")
+                                        .setMaxBadRecords(1000)
                                         .setSchemaUpdateOptions(ImmutableList.of(
                                                 "ALLOW_FIELD_ADDITION", "ALLOW_FIELD_RELAXATION"))
                                         .setDestinationTable(
@@ -202,7 +205,7 @@ public class LogUploadService extends JobService {
                                                     .setDatasetId(datasetId)
                                                     .setTableId(tableId))));
                 Job result = bigquery.jobs().insert(projectId, job, content).execute();
-                Log.d(TAG, mLogFile + ": job id is " + result.getId());
+                Log.d(TAG, mLogFile + ",tableId is " + tableId + " job id is " + result.getId());
 
                 return true;
             } catch (UserRecoverableAuthIOException e) {
