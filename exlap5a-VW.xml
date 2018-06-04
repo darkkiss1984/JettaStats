@@ -1,0 +1,1542 @@
+<?xml version="1.0"?>
+<List>
+  <Object url="oilLevel" context="global" characteristic="dynamic">
+    <Absolute name="refillVolume" min="0" unit="" resolution=".001"/>
+    <Absolute name="level" min="0" max="8" unit="" resolution="1"/>
+    <Activity name="systemAvailable"/>
+    <Activity name="showBargraph"/>
+    <Enumeration name="refillVolumeUnit">
+      <Member id="liter"/>
+      <Member id="gallon_UK"/>
+      <Member id="gallon_US"/>
+    </Enumeration>
+    <Enumeration name="warnings">
+      <Member id="oil_minimum"/>
+      <Member id="oil_underfill"/>
+      <Member id="oil_overfill"/>
+      <Member id="oil_sensor_error"/>
+      <Member id="oil_OK"/>
+      <Member id="oil_check_oil"/>
+      <Member id="oil_tilt"/>
+      <Member id="oil_not_under_hot_running_condit"/>
+      <Member id="oil_running_engine"/>
+      <Member id="oil_warning_not_defined"/>
+      <Member id="oil_level_not_available"/>
+      <Member id="oil_system_error"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="maxChargingAirPressure" context="global" characteristic="dynamic">
+    <Absolute name="maxChargingAirPressure" min="0" max="6.29999999999999982236431605997" unit="bar" resolution=".1"/>
+  </Object>
+  <Object url="currentGear" context="global" characteristic="dynamic">
+    <Enumeration name="currentGear">
+      <Member id="NoGear"/>
+      <Member id="Gear1"/>
+      <Member id="Gear2"/>
+      <Member id="Gear3"/>
+      <Member id="Gear4"/>
+      <Member id="Gear5"/>
+      <Member id="Gear6"/>
+      <Member id="Gear7"/>
+      <Member id="Gear8"/>
+      <Member id="Gear9"/>
+      <Member id="Gear10"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="clutch" context="global" characteristic="dynamic">
+    <Enumeration name="clutch">
+      <Member id="not_clutchedIn"/>
+      <Member id="clutchedIn"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="vehicleIdenticationNumber" context="global" characteristic="dynamic">
+    <Text name="VIN" regExp="[A-Z,0-9]{0,17}"/>
+  </Object>
+  <Object url="recuperationLevel" context="global" characteristic="dynamic">
+    <Enumeration name="recupLevel">
+      <Member id="no_presentation"/>
+      <Member id="1"/>
+      <Member id="2"/>
+      <Member id="3"/>
+      <Member id="4"/>
+      <Member id="5"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="displayNightDesign" context="global" characteristic="dynamic">
+    <Activity name="nightDesign"/>
+  </Object>
+  <Object url="absChargingAirPressure" context="global" characteristic="dynamic">
+    <Absolute name="absChargingAirPressure" min="0" max="5.09999999999999964472863211994" unit="bar" resolution=".01"/>
+  </Object>
+  <Object url="shortTermConsumptionSecondary" context="global" characteristic="dynamic">
+    <Absolute name="value" min="INF" unit="" resolution=".01"/>
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="unit">
+      <Member id="l/100km"/>
+      <Member id="km/l"/>
+      <Member id="l/h"/>
+      <Member id="mpg_UK"/>
+      <Member id="mpg_US"/>
+      <Member id="gal/h"/>
+      <Member id="kg/100km"/>
+      <Member id="km/kg"/>
+      <Member id="kg/h"/>
+      <Member id="m3/100km"/>
+      <Member id="km/m3"/>
+      <Member id="m3/h"/>
+      <Member id="mi/lbs"/>
+      <Member id="lbs/h"/>
+      <Member id="mi/yd3"/>
+      <Member id="yd3/h"/>
+      <Member id="kWh/100km"/>
+      <Member id="km/kWh"/>
+      <Member id="kWh/mi"/>
+      <Member id="mi/kWh"/>
+      <Member id="kW"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="coastingIsActive" context="global" characteristic="dynamic">
+    <Activity name="coastingIsActive"/>
+  </Object>
+  <Object url="seatHeater_zone1" context="global" characteristic="dynamic">
+    <Absolute name="level" min="0" unit="" resolution="1"/>
+    <Enumeration name="state">
+      <Member id="on"/>
+      <Member id="off"/>
+      <Member id="automatic"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="seatHeater_zone2" context="global" characteristic="dynamic">
+    <Absolute name="level" min="0" unit="" resolution="1"/>
+    <Enumeration name="state">
+      <Member id="on"/>
+      <Member id="off"/>
+      <Member id="automatic"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="hevOperationMode" context="global" characteristic="dynamic">
+    <Enumeration name="mode">
+      <Member id="noData"/>
+      <Member id="ev"/>
+      <Member id="hybrid"/>
+      <Member id="sustaining"/>
+      <Member id="charging"/>
+      <Member id="socControl"/>
+      <Member id="hybridSport"/>
+    </Enumeration>
+  </Object>
+  <Object url="yawRate" context="global" characteristic="dynamic">
+    <Absolute name="yawRate" min="0" max="163.819999999999993178789736703" unit="&#xB0;/s" resolution=".01"/>
+  </Object>
+  <Object url="lightState_rear" context="global" characteristic="static">
+    <Activity name="fogLight"/>
+  </Object>
+  <Object url="consumptionShortTermGeneral" context="global" characteristic="dynamic">
+    <Absolute name="distanceValue" min="INF" unit="" resolution=".01"/>
+    <Absolute name="speedValue" min="INF" unit="" resolution=".01"/>
+    <Absolute name="time" min="0" unit="min" resolution="1"/>
+    <Enumeration name="distanceValueState">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="distanceUnit">
+      <Member id="km"/>
+      <Member id="mi"/>
+    </Enumeration>
+    <Enumeration name="speedValueState">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="speedUnit">
+      <Member id="kmh"/>
+      <Member id="mph"/>
+    </Enumeration>
+  </Object>
+  <Object url="engineSpeed" context="global" characteristic="dynamic">
+    <Absolute name="engineSpeed" min="0" max="12282" unit="1/min" resolution="1"/>
+  </Object>
+  <Object url="System_Language" context="global" characteristic="dynamic">
+    <Text name="Language" regExp="[a-zA-Z0-9]{2,3}(_[a-zA-Z0-9]{2,3})?"/>
+  </Object>
+  <Object url="longTermConsumptionPrimary" context="global" characteristic="dynamic">
+    <Absolute name="value" min="INF" unit="" resolution=".01"/>
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="unit">
+      <Member id="l/100km"/>
+      <Member id="km/l"/>
+      <Member id="l/h"/>
+      <Member id="mpg_UK"/>
+      <Member id="mpg_US"/>
+      <Member id="gal/h"/>
+      <Member id="kg/100km"/>
+      <Member id="km/kg"/>
+      <Member id="kg/h"/>
+      <Member id="m3/100km"/>
+      <Member id="km/m3"/>
+      <Member id="m3/h"/>
+      <Member id="mi/lbs"/>
+      <Member id="lbs/h"/>
+      <Member id="mi/yd3"/>
+      <Member id="yd3/h"/>
+      <Member id="kWh/100km"/>
+      <Member id="km/kWh"/>
+      <Member id="kWh/mi"/>
+      <Member id="mi/kWh"/>
+      <Member id="kW"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="outsideTemperature" context="global" characteristic="dynamic">
+    <Absolute name="temperature" min="-58" max="171" unit="" resolution=".1"/>
+    <Enumeration name="unit">
+      <Member id="&#xB0;C"/>
+      <Member id="&#xB0;F"/>
+    </Enumeration>
+    <Enumeration name="state">
+      <Member id="initial"/>
+      <Member id="valid"/>
+      <Member id="invalid"/>
+    </Enumeration>
+  </Object>
+  <Object url="clampState" context="global" characteristic="dynamic">
+    <Activity name="clamp_S"/>
+    <Activity name="clamp_15"/>
+    <Activity name="clamp_X"/>
+  </Object>
+  <Object url="blinkingState" context="global" characteristic="dynamic">
+    <Enumeration name="blinkingState">
+      <Member id="off"/>
+      <Member id="left"/>
+      <Member id="right"/>
+      <Member id="left_right"/>
+    </Enumeration>
+  </Object>
+  <Object url="System_UnitDistance" context="global" characteristic="dynamic">
+    <Text name="Unit" regExp=".{1,2}"/>
+  </Object>
+  <Object url="Nav_GeoPosition" context="global" characteristic="dynamic">
+    <Absolute name="Longitude" min="-180" max="180" unit="degree" resolution="1.E-6"/>
+    <Absolute name="Latitude" min="-90" max="90" unit="degree" resolution="1.E-6"/>
+  </Object>
+  <Object url="System_ProximityRecognition" context="global" characteristic="dynamic">
+    <Activity name="InRange"/>
+  </Object>
+  <Object url="Car_vehicleInformation" context="global" characteristic="static">
+    <Absolute name="StickerBits" min="0" max="65535" unit="" resolution="1"/>
+    <Text name="Type" regExp="[A-Za-z0-9 ]{0,20}"/>
+  </Object>
+  <Object url="lightState_front" context="global" characteristic="static">
+    <Activity name="lowBeamHeadlight"/>
+    <Activity name="highBeamHeadlight"/>
+    <Activity name="fogLight"/>
+    <Activity name="daytimeRunningLight"/>
+  </Object>
+  <Object url="currentConsumptionPrimary" context="global" characteristic="dynamic">
+    <Absolute name="value" min="INF" unit="" resolution=".01"/>
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="unit">
+      <Member id="l/100km"/>
+      <Member id="km/l"/>
+      <Member id="l/h"/>
+      <Member id="mpg_UK"/>
+      <Member id="mpg_US"/>
+      <Member id="gal/h"/>
+      <Member id="kg/100km"/>
+      <Member id="km/kg"/>
+      <Member id="kg/h"/>
+      <Member id="m3/100km"/>
+      <Member id="km/m3"/>
+      <Member id="m3/h"/>
+      <Member id="mi/lbs"/>
+      <Member id="lbs/h"/>
+      <Member id="mi/yd3"/>
+      <Member id="yd3/h"/>
+      <Member id="kWh/100km"/>
+      <Member id="km/kWh"/>
+      <Member id="kWh/mi"/>
+      <Member id="mi/kWh"/>
+      <Member id="kW"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Function url="Radio_TuneFrequency">
+    <In>
+      <Absolute name="Frequency" min="INF" unit="Hz" resolution="1"/>
+      <Enumeration name="Band">
+        <Member id="DAB"/>
+        <Member id="FM"/>
+        <Member id="AM"/>
+        <Member id="SDARS"/>
+      </Enumeration>
+      <Text name="FrequencyLabel" regExp=".{0,100}"/>
+    </In>
+    <Out/>
+  </Function>
+  <Function url="Media_Pause">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="displayNightDesign" context="global" characteristic="dynamic">
+    <Activity name="nightDesign"/>
+  </Object>
+  <Object url="suspensionProfile" context="global" characteristic="dynamic">
+    <Enumeration name="profile">
+      <Member id="profile_1"/>
+      <Member id="profile_2"/>
+      <Member id="profile_3"/>
+      <Member id="profile_4"/>
+      <Member id="profile_5"/>
+      <Member id="profile_6"/>
+      <Member id="profile_7"/>
+      <Member id="profile_8"/>
+      <Member id="profile_9"/>
+      <Member id="profile_10"/>
+      <Member id="profile_11"/>
+      <Member id="profile_12"/>
+      <Member id="profile_13"/>
+      <Member id="profile_14"/>
+      <Member id="profile_15"/>
+      <Member id="profile_16"/>
+      <Member id="profile_17"/>
+      <Member id="profile_18"/>
+      <Member id="profile_19"/>
+      <Member id="profile_20"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="dayMilage" context="global" characteristic="dynamic">
+    <Absolute name="value" min="0" max="2147483700" unit="m" resolution="100"/>
+  </Object>
+  <Object url="MediaBrowser_Path" context="global" characteristic="dynamic">
+    <ListEntity name="Path" typeRef="MediaBrowser_Entry" required="false"/>
+  </Object>
+  <Object url="seatHeater_zone1" context="global" characteristic="dynamic">
+    <Absolute name="level" min="0" unit="" resolution="1"/>
+    <Enumeration name="state">
+      <Member id="on"/>
+      <Member id="off"/>
+      <Member id="automatic"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="seatHeater_zone2" context="global" characteristic="dynamic">
+    <Absolute name="level" min="0" unit="" resolution="1"/>
+    <Enumeration name="state">
+      <Member id="on"/>
+      <Member id="off"/>
+      <Member id="automatic"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="lateralAcceleration" context="global" characteristic="dynamic">
+    <Absolute name="lateralAcceleration" min="-2.5" max="2.5" unit="g" resolution=".01"/>
+  </Object>
+  <Function url="Radio_ActivateBand">
+    <In>
+      <Enumeration name="Band">
+        <Member id="AM"/>
+        <Member id="FM"/>
+        <Member id="DAB"/>
+        <Member id="SDARS"/>
+        <Member id="DMB"/>
+      </Enumeration>
+    </In>
+    <Out/>
+  </Function>
+  <Object url="totalDistance" context="global" characteristic="dynamic">
+    <Absolute name="distanceValue" min="0" unit="" resolution="1"/>
+    <Enumeration name="unit">
+      <Member id="km"/>
+      <Member id="mi"/>
+    </Enumeration>
+  </Object>
+  <Object url="EcoHMI_Score" context="global" characteristic="dynamic">
+    <Absolute name="AvgShort" min="0" max="100" unit="" resolution="1"/>
+    <Absolute name="AvgTrip" min="0" max="100" unit="" resolution="1"/>
+  </Object>
+  <Object url="longitudinalAcceleration" context="global" characteristic="dynamic">
+    <Absolute name="longitudinalAcceleration" min="-25" max="25" unit="m/s&#xB2;" resolution="1.E-5"/>
+  </Object>
+  <Object url="Radio_DABPresets" context="global" characteristic="dynamic">
+    <ListEntity name="Stations" typeRef="Radio_Preset" required="false"/>
+  </Object>
+  <Object url="acceleratorPosition" context="global" characteristic="dynamic">
+    <Relative name="acceleratorPosition" min="0" max="1" minLabel="unpressed" maxLabel="fully-pressed" resolution=".01"/>
+  </Object>
+  <Object url="brakePressure" context="global" characteristic="dynamic">
+    <Absolute name="brakePressure" min="-30" max="276.600000000000022737367544323" unit="bar" resolution=".1"/>
+  </Object>
+  <Function url="Radio_FrequencyDecrease">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="driveMode" context="global" characteristic="dynamic">
+    <Enumeration name="activeProfile">
+      <Member id="comfort"/>
+      <Member id="auto_normal"/>
+      <Member id="dynamic"/>
+      <Member id="offroad_allroad"/>
+      <Member id="offroad_level2"/>
+      <Member id="offroad_level3"/>
+      <Member id="offroad_level4"/>
+      <Member id="efficiency"/>
+      <Member id="sport_race"/>
+      <Member id="individual"/>
+      <Member id="range"/>
+      <Member id="lift"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="MediaBrowser_ListState" context="global" characteristic="dynamic">
+    <Absolute name="PageSize" min="INF" unit="" resolution="1"/>
+    <Absolute name="ListSize" min="INF" unit="" resolution="1"/>
+    <Absolute name="ModCount" min="INF" unit="" resolution="1"/>
+    <Enumeration name="State">
+      <Member id="Ready"/>
+      <Member id="Loading"/>
+      <Member id="NoData"/>
+    </Enumeration>
+  </Object>
+  <Object url="currentTorque" context="global" characteristic="dynamic">
+    <Absolute name="currentTorque" min="-1527" max="1527" unit="Nm" resolution="1"/>
+  </Object>
+  <Object url="driverIsBraking" context="global" characteristic="dynamic">
+    <Activity name="driverIsBraking"/>
+  </Object>
+  <Object url="Radio_FrequencyRanges" context="global" characteristic="static">
+    <Enumeration name="AM">
+      <Member id="EURDW"/>
+      <Member id="NAR"/>
+      <Member id="JP"/>
+      <Member id="AUS"/>
+      <Member id="EU"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="FM">
+      <Member id="EURDW"/>
+      <Member id="NAR"/>
+      <Member id="JP"/>
+      <Member id="KOR"/>
+      <Member id="CN"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="currentConsumptionSecondary" context="global" characteristic="dynamic">
+    <Absolute name="value" min="INF" unit="" resolution=".01"/>
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="unit">
+      <Member id="l/100km"/>
+      <Member id="km/l"/>
+      <Member id="l/h"/>
+      <Member id="mpg_UK"/>
+      <Member id="mpg_US"/>
+      <Member id="gal/h"/>
+      <Member id="kg/100km"/>
+      <Member id="km/kg"/>
+      <Member id="kg/h"/>
+      <Member id="m3/100km"/>
+      <Member id="km/m3"/>
+      <Member id="m3/h"/>
+      <Member id="mi/lbs"/>
+      <Member id="lbs/h"/>
+      <Member id="mi/yd3"/>
+      <Member id="yd3/h"/>
+      <Member id="kWh/100km"/>
+      <Member id="km/kWh"/>
+      <Member id="kWh/mi"/>
+      <Member id="mi/kWh"/>
+      <Member id="kW"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="Sound_Volume" context="global" characteristic="dynamic">
+    <Absolute name="Volume" min="INF" unit="steps" resolution="1"/>
+    <Activity name="EntertainmentMuted"/>
+    <Enumeration name="Source">
+      <Member id="Entertainment"/>
+      <Member id="TA"/>
+      <Member id="Navigation"/>
+      <Member id="Phone"/>
+      <Member id="SDS"/>
+    </Enumeration>
+  </Object>
+  <Object url="batteryVoltage" context="global" characteristic="dynamic">
+    <Absolute name="voltage" min="0" max="17.6999999999999992894572642399" unit="V" resolution=".01"/>
+  </Object>
+  <Function url="Media_SetPlayMode">
+    <In>
+      <Activity name="MixMode"/>
+      <Activity name="PMLTMode"/>
+      <Enumeration name="Mode">
+        <Member id="Off"/>
+        <Member id="RepeatTrack"/>
+        <Member id="RepeatFolder"/>
+      </Enumeration>
+    </In>
+    <Out/>
+  </Function>
+  <Object url="serviceInspection" context="global" characteristic="dynamic">
+    <Absolute name="distance" min="0" max="204700" unit="" resolution="1"/>
+    <Absolute name="time" min="0" max="2047" unit="d" resolution="1"/>
+    <Enumeration name="distanceState">
+      <Member id="noData"/>
+      <Member id="not_calculated"/>
+      <Member id="service_in"/>
+      <Member id="service_ago"/>
+    </Enumeration>
+    <Enumeration name="distanceUnit">
+      <Member id="noData"/>
+      <Member id="km"/>
+      <Member id="mi"/>
+    </Enumeration>
+    <Enumeration name="timeState">
+      <Member id="noData"/>
+      <Member id="not_calculated"/>
+      <Member id="service_in"/>
+      <Member id="service_ago"/>
+    </Enumeration>
+  </Object>
+  <Object url="System_Language" context="global" characteristic="dynamic">
+    <Text name="Language" regExp="[a-zA-Z0-9]{2,3}(_[a-zA-Z0-9]{2,3})?"/>
+  </Object>
+  <Function url="Radio_SeekForward">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="combustionEngineDisplacement" context="global" characteristic="static">
+    <Absolute name="displacement" min="0" max="12.6999999999999992894572642399" unit="l" resolution=".1"/>
+  </Object>
+  <Object url="fuelWarningPrimaryTank" context="global" characteristic="dynamic">
+    <Activity name="warningPrimaryTank"/>
+  </Object>
+  <Object url="EcoHMI_Event" context="global" characteristic="dynamic">
+    <Text name="description" regExp="[A-Za-z\.,0-9]{0,10}"/>
+    <Time name="eventTime" isLocalTime="true"/>
+  </Object>
+  <Object url="outsideTemperature" context="global" characteristic="dynamic">
+    <Absolute name="temperature" min="-58" max="171" unit="" resolution=".1"/>
+    <Enumeration name="unit">
+      <Member id="&#xB0;C"/>
+      <Member id="&#xB0;F"/>
+    </Enumeration>
+    <Enumeration name="state">
+      <Member id="initial"/>
+      <Member id="valid"/>
+      <Member id="invalid"/>
+    </Enumeration>
+  </Object>
+  <Object url="accIsActive" context="global" characteristic="dynamic">
+    <Activity name="accIsActive"/>
+  </Object>
+  <Object url="maxOutputPower" context="global" characteristic="dynamic">
+    <Absolute name="maxOutputPower" min="0" max="511" unit="kW" resolution="1"/>
+  </Object>
+  <Object url="tankLevelPrimary" context="global" characteristic="dynamic">
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Relative name="level" min="0" max="1" minLabel="empty" maxLabel="full" resolution=".01"/>
+  </Object>
+  <Function url="Radio_TuneStation">
+    <In>
+      <Absolute name="Frequency" min="INF" unit="Hz" resolution="1"/>
+      <Absolute name="PICode" min="INF" unit="" resolution="1"/>
+      <Absolute name="ServiceId" min="INF" unit="" resolution="1"/>
+      <Absolute name="EnsembleId" min="INF" unit="" resolution="1"/>
+      <Absolute name="ExtendedCountryCode" min="INF" unit="" resolution="1"/>
+      <Absolute name="ServiceComponentId" min="INF" unit="" resolution="1"/>
+      <Enumeration name="Band">
+        <Member id="AM"/>
+        <Member id="FM"/>
+        <Member id="DAB"/>
+        <Member id="SDARS"/>
+      </Enumeration>
+      <Text name="Name" regExp=".{0,150}"/>
+      <Text name="ShortName" regExp=".{0,30}"/>
+    </In>
+    <Out/>
+  </Function>
+  <Object url="gearTransmissionMode" context="global" characteristic="dynamic">
+    <Enumeration name="mode">
+      <Member id="no_position"/>
+      <Member id="position_P"/>
+      <Member id="position_R"/>
+      <Member id="position_N"/>
+      <Member id="position_D"/>
+      <Member id="position_S"/>
+      <Member id="position_M_tap"/>
+      <Member id="position_M_brief"/>
+      <Member id="position_E"/>
+      <Member id="position_B"/>
+      <Member id="position_MS"/>
+      <Member id="position_S_plus"/>
+      <Member id="position_MS_plus"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="System_UnitDistance" context="global" characteristic="dynamic">
+    <Text name="Unit" regExp=".{1,2}"/>
+  </Object>
+  <Function url="Media_PreviousTrack">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="System_activeSource" context="global" characteristic="dynamic">
+    <Enumeration name="SourceContext">
+      <Member id="none"/>
+      <Member id="radio"/>
+      <Member id="media"/>
+      <Member id="SPI_smartPhone"/>
+      <Member id="TV"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="Radio_DABServiceComponent" context="global" characteristic="dynamic">
+    <ListEntity name="Stations" typeRef="Radio_Station" required="false"/>
+  </Object>
+  <Object url="System_ProximityRecognition" context="global" characteristic="dynamic">
+    <Activity name="InRange"/>
+  </Object>
+  <Object url="longTermConsumptionSecondary" context="global" characteristic="dynamic">
+    <Absolute name="value" min="INF" unit="" resolution=".01"/>
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="unit">
+      <Member id="l/100km"/>
+      <Member id="km/l"/>
+      <Member id="l/h"/>
+      <Member id="mpg_UK"/>
+      <Member id="mpg_US"/>
+      <Member id="gal/h"/>
+      <Member id="kg/100km"/>
+      <Member id="km/kg"/>
+      <Member id="kg/h"/>
+      <Member id="m3/100km"/>
+      <Member id="km/m3"/>
+      <Member id="m3/h"/>
+      <Member id="mi/lbs"/>
+      <Member id="lbs/h"/>
+      <Member id="mi/yd3"/>
+      <Member id="yd3/h"/>
+      <Member id="kWh/100km"/>
+      <Member id="km/kWh"/>
+      <Member id="kWh/mi"/>
+      <Member id="mi/kWh"/>
+      <Member id="kW"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="MediaBrowser_FollowMode" context="global" characteristic="dynamic">
+    <Activity name="FollowMode"/>
+  </Object>
+  <Object url="Car_vehicleInformation" context="global" characteristic="static">
+    <Absolute name="StickerBits" min="0" max="65535" unit="" resolution="1"/>
+    <Text name="Type" regExp="[A-Za-z0-9 ]{0,20}"/>
+  </Object>
+  <Function url="MediaBrowser_SetSource">
+    <In>
+      <Enumeration name="Source">
+        <Member id="CDDVDInternal"/>
+        <Member id="SDCard"/>
+        <Member id="AUX"/>
+        <Member id="CDDVDChanger"/>
+        <Member id="HDD"/>
+        <Member id="BTAudio"/>
+        <Member id="USB"/>
+        <Member id="SDCard2"/>
+        <Member id="WLAN"/>
+        <Member id="USB2"/>
+        <Member id="USB3"/>
+        <Member id="USB1Part2"/>
+        <Member id="USB2Part2"/>
+        <Member id="USB3Part2"/>
+        <Member id="USB4"/>
+        <Member id="USB4Part2"/>
+      </Enumeration>
+    </In>
+    <Out/>
+  </Function>
+  <Function url="ExAc_GetToken">
+    <In>
+      <Text name="resourceID" regExp="[a-zA-Z0-9]{1..20}"/>
+    </In>
+    <Out>
+      <Absolute name="token" min="INF" unit="ID" resolution="1"/>
+      <Activity name="gotToken"/>
+    </Out>
+  </Function>
+  <Object url="Sound_BalanceFaderSetup" context="global" characteristic="static">
+    <Absolute name="BalanceLeft" min="INF" unit="" resolution="1"/>
+    <Absolute name="BalanceRight" min="INF" unit="" resolution="1"/>
+    <Absolute name="FaderRear" min="INF" unit="" resolution="1"/>
+    <Absolute name="FaderFront" min="INF" unit="" resolution="1"/>
+  </Object>
+  <Object url="cycleConsumptionPrimary" context="global" characteristic="dynamic">
+    <Absolute name="value" min="INF" unit="" resolution=".01"/>
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="unit">
+      <Member id="l/100km"/>
+      <Member id="km/l"/>
+      <Member id="l/h"/>
+      <Member id="mpg_UK"/>
+      <Member id="mpg_US"/>
+      <Member id="gal/h"/>
+      <Member id="kg/100km"/>
+      <Member id="km/kg"/>
+      <Member id="kg/h"/>
+      <Member id="m3/100km"/>
+      <Member id="km/m3"/>
+      <Member id="m3/h"/>
+      <Member id="mi/lbs"/>
+      <Member id="lbs/h"/>
+      <Member id="mi/yd3"/>
+      <Member id="yd3/h"/>
+      <Member id="kWh/100km"/>
+      <Member id="km/kWh"/>
+      <Member id="kWh/mi"/>
+      <Member id="mi/kWh"/>
+      <Member id="kW"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Function url="Media_SwitchSource">
+    <In>
+      <Enumeration name="Source">
+        <Member id="CDDVDInternal"/>
+        <Member id="SDCard"/>
+        <Member id="AUX"/>
+        <Member id="CDDVDChanger"/>
+        <Member id="HDD"/>
+        <Member id="BTAudio"/>
+        <Member id="USB"/>
+        <Member id="SDCard2"/>
+        <Member id="WLAN"/>
+        <Member id="USB2"/>
+        <Member id="USB3"/>
+        <Member id="USB1Part2"/>
+        <Member id="USB2Part2"/>
+        <Member id="USB3Part2"/>
+        <Member id="USB4"/>
+        <Member id="USB4Part2"/>
+      </Enumeration>
+    </In>
+    <Out/>
+  </Function>
+  <Function url="ExAc_ReleaseToken">
+    <In>
+      <Text name="resourceID" regExp="[a-zA-Z0-9]{1..20}"/>
+    </In>
+    <Out>
+      <Activity name="released"/>
+    </Out>
+  </Function>
+  <Function url="Sound_Mute">
+    <In/>
+    <Out/>
+  </Function>
+  <Function url="Sound_Unmute">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="MediaBrowser_PathCurrentTrack" context="global" characteristic="dynamic">
+    <ListEntity name="Path" typeRef="MediaBrowser_Entry" required="false"/>
+  </Object>
+  <Function url="Radio_FrequencyIncrease">
+    <In/>
+    <Out/>
+  </Function>
+  <Function url="Radio_StationPrevious">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="System_HMISkin" context="global" characteristic="dynamic">
+    <Text name="Skin" regExp=".{1,50}"/>
+  </Object>
+  <Function url="Media_NextTrack">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="fuelWarningSecondaryTank" context="global" characteristic="dynamic">
+    <Activity name="warningSecondaryTank"/>
+  </Object>
+  <Object url="unitTimeFormat" context="global" characteristic="dynamic">
+    <Enumeration name="clockFormat">
+      <Member id="format_24h"/>
+      <Member id="format_12AMPM"/>
+    </Enumeration>
+  </Object>
+  <Object url="relChargingAirPressure" context="global" characteristic="dynamic">
+    <Relative name="relChargingAirPressure" min="0" max="1" minLabel="no_pressure" maxLabel="max_pressure" resolution=".01"/>
+  </Object>
+  <Object url="Media_Track" context="global" characteristic="dynamic">
+    <Absolute name="Length" min="0" max="2147483647" unit="ms" resolution="1"/>
+    <Absolute name="Number" min="0" max="4294967295" unit="Track" resolution="1"/>
+    <Text name="Cover" regExp=".+"/>
+    <Text name="Title" regExp=".{0,150}"/>
+    <Text name="Artist" regExp=".{0,150}"/>
+    <Text name="Album" regExp=".{0,150}"/>
+  </Object>
+  <Function url="Media_Play">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="System_DayNight" context="global" characteristic="dynamic">
+    <Enumeration name="State">
+      <Member id="DayMode"/>
+      <Member id="NightMode"/>
+      <Member id="NotActive"/>
+    </Enumeration>
+  </Object>
+  <Object url="coolantTemperature" context="global" characteristic="dynamic">
+    <Absolute name="temperature" min="-60" max="300" unit="" resolution=".1"/>
+    <Enumeration name="unit">
+      <Member id="&#xB0;C"/>
+      <Member id="&#xB0;F"/>
+    </Enumeration>
+    <Enumeration name="state">
+      <Member id="initial"/>
+      <Member id="valid"/>
+      <Member id="invalid"/>
+    </Enumeration>
+  </Object>
+  <Object url="unitDateFormat" context="global" characteristic="dynamic">
+    <Enumeration name="dateFormat">
+      <Member id="day_month_year"/>
+      <Member id="month_day_year"/>
+      <Member id="year_month_day"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="Radio_FMStations" context="global" characteristic="dynamic">
+    <ListEntity name="Stations" typeRef="Radio_Station" required="false"/>
+  </Object>
+  <Object url="Radio_DABServices" context="global" characteristic="dynamic">
+    <ListEntity name="Stations" typeRef="Radio_Station" required="false"/>
+  </Object>
+  <Object url="Radio_Tuner" context="global" characteristic="dynamic">
+    <Absolute name="Frequency" min="INF" unit="Hz" resolution="1"/>
+    <Absolute name="PICode" min="INF" unit="" resolution="1"/>
+    <Absolute name="ServiceId" min="INF" unit="" resolution="1"/>
+    <Absolute name="EnsembleId" min="INF" unit="" resolution="1"/>
+    <Absolute name="ExtendedCountryCode" min="INF" unit="" resolution="1"/>
+    <Absolute name="ServiceComponentId" min="INF" unit="" resolution="1"/>
+    <Activity name="RDS"/>
+    <Activity name="TP"/>
+    <Activity name="FMLinkingActive"/>
+    <Enumeration name="Band_Type">
+      <Member id="AM"/>
+      <Member id="FM"/>
+      <Member id="DAB"/>
+      <Member id="SDARS"/>
+      <Member id="DMB"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Text name="Name" regExp=".{0,100}"/>
+    <Text name="ShortName" regExp=".{0,16}"/>
+    <Text name="FrequencyLabel" regExp=".{0,100}"/>
+    <Text name="Cover" regExp=".+"/>
+  </Object>
+  <Function url="Radio_PresetStore">
+    <In>
+      <Absolute name="Index" min="INF" unit="" resolution="1"/>
+      <Enumeration name="Band">
+        <Member id="AM"/>
+        <Member id="FM"/>
+        <Member id="DAB"/>
+        <Member id="SDARS"/>
+      </Enumeration>
+    </In>
+    <Out/>
+  </Function>
+  <Function url="Media_SetTrackTime">
+    <In>
+      <Absolute name="Elapsed" min="0" max="2147483647" unit="ms" resolution="1"/>
+    </In>
+    <Out/>
+  </Function>
+  <Object url="Radio_Text" context="global" characteristic="dynamic">
+    <Activity name="ImageAvailable"/>
+    <Text name="Text" regExp=".{0,100}"/>
+    <Text name="Artist" regExp=".{0,100}"/>
+    <Text name="Album" regExp=".{0,100}"/>
+    <Text name="Title" regExp=".{0,100}"/>
+    <Text name="Image" regExp=".+"/>
+  </Object>
+  <Function url="MediaBrowser_FollowModeOff">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="shortTermConsumptionPrimary" context="global" characteristic="dynamic">
+    <Absolute name="value" min="INF" unit="" resolution=".01"/>
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="unit">
+      <Member id="l/100km"/>
+      <Member id="km/l"/>
+      <Member id="l/h"/>
+      <Member id="mpg_UK"/>
+      <Member id="mpg_US"/>
+      <Member id="gal/h"/>
+      <Member id="kg/100km"/>
+      <Member id="km/kg"/>
+      <Member id="kg/h"/>
+      <Member id="m3/100km"/>
+      <Member id="km/m3"/>
+      <Member id="m3/h"/>
+      <Member id="mi/lbs"/>
+      <Member id="lbs/h"/>
+      <Member id="mi/yd3"/>
+      <Member id="yd3/h"/>
+      <Member id="kWh/100km"/>
+      <Member id="km/kWh"/>
+      <Member id="kWh/mi"/>
+      <Member id="mi/kWh"/>
+      <Member id="kW"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="suspensionStates" context="global" characteristic="dynamic">
+    <Absolute name="height_frontLeft" min="0" max="100" unit="percent" resolution="1"/>
+    <Absolute name="height_frontRight" min="0" max="100" unit="percent" resolution="1"/>
+    <Absolute name="height_rearLeft" min="0" max="100" unit="percent" resolution="1"/>
+    <Absolute name="height_rearRight" min="0" max="100" unit="percent" resolution="1"/>
+  </Object>
+  <Function url="GetImageInformationByLocator">
+    <In>
+      <Text name="ResourceLocator"/>
+    </In>
+    <Out>
+      <Absolute name="filesize" min="0" unit="byte" resolution="1"/>
+      <Absolute name="pixelX" min="0" unit="px" resolution="1"/>
+      <Absolute name="pixelY" min="0" unit="px" resolution="1"/>
+      <Absolute name="hash" min="INF" unit=""/>
+      <Enumeration name="MimeType">
+        <Member id="image_png"/>
+        <Member id="image_jpg"/>
+        <Member id="image_bmp"/>
+        <Member id="image_gif"/>
+        <Member id="image_R4G4B4A4"/>
+        <Member id="image_R8G8B8A8"/>
+        <Member id="image_R8G8B8"/>
+        <Member id="unknown"/>
+      </Enumeration>
+      <Enumeration name="Result">
+        <Member id="ok"/>
+        <Member id="error"/>
+        <Member id="locatorNotFound"/>
+        <Member id="systemNotReady"/>
+      </Enumeration>
+    </Out>
+  </Function>
+  <Function url="MediaBrowser_Play">
+    <In>
+      <Enumeration name="Type">
+        <Member id="Unknown"/>
+        <Member id="Audio"/>
+        <Member id="Video"/>
+        <Member id="Image"/>
+        <Member id="Folder"/>
+        <Member id="Playlist"/>
+        <Member id="PlaylistFolder"/>
+        <Member id="AudioFolder"/>
+        <Member id="VideoFolder"/>
+        <Member id="ImageFolder"/>
+        <Member id="ArtistFolder"/>
+        <Member id="AlbumFolder"/>
+        <Member id="TitleFolder"/>
+        <Member id="GenreFolder"/>
+        <Member id="FavoriteFolder"/>
+      </Enumeration>
+      <Text name="Identifier" regExp="^([+-]?[0-9]{1,20}|)$"/>
+    </In>
+    <Out/>
+  </Function>
+  <Object url="tankLevelSecondary" context="global" characteristic="dynamic">
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Relative name="level" min="0" max="1" minLabel="empty" maxLabel="full" resolution=".01"/>
+  </Object>
+  <Object url="Media_PlayMode" context="global" characteristic="dynamic">
+    <Activity name="MixMode"/>
+    <Activity name="PMLTMode"/>
+    <Enumeration name="Mode">
+      <Member id="Off"/>
+      <Member id="RepeatTrack"/>
+      <Member id="RepeatFolder"/>
+    </Enumeration>
+  </Object>
+  <Function url="Sound_IncreaseVolume">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="oilTemperature" context="global" characteristic="dynamic">
+    <Absolute name="temperature" min="-60" max="380" unit="" resolution=".01"/>
+    <Enumeration name="unit">
+      <Member id="&#xB0;C"/>
+      <Member id="&#xB0;F"/>
+    </Enumeration>
+    <Enumeration name="state">
+      <Member id="initial"/>
+      <Member id="valid"/>
+      <Member id="invalid"/>
+    </Enumeration>
+  </Object>
+  <Object url="unitVolume" context="global" characteristic="dynamic">
+    <Enumeration name="volumeUnit">
+      <Member id="kg"/>
+      <Member id="pounds"/>
+      <Member id="liter"/>
+      <Member id="gal_UK"/>
+      <Member id="gal_US"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Function url="Radio_PresetDelete">
+    <In>
+      <Absolute name="Index" min="INF" unit="" resolution="1"/>
+      <Enumeration name="Band">
+        <Member id="AM"/>
+        <Member id="FM"/>
+        <Member id="DAB"/>
+        <Member id="SDARS"/>
+      </Enumeration>
+    </In>
+    <Out/>
+  </Function>
+  <Object url="System_HMISkin" context="global" characteristic="dynamic">
+    <Text name="Skin" regExp=".{1,50}"/>
+  </Object>
+  <Object url="unitPressure" context="global" characteristic="dynamic">
+    <Enumeration name="pressureUnit">
+      <Member id="bar"/>
+      <Member id="psi"/>
+      <Member id="kpa"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="reverseGear" context="global" characteristic="dynamic">
+    <Activity name="engaged"/>
+  </Object>
+  <Object url="combustionEngineInjection" context="global" characteristic="static">
+    <Enumeration name="type">
+      <Member id="noData"/>
+      <Member id="turbo"/>
+      <Member id="aspiration"/>
+    </Enumeration>
+  </Object>
+  <Function url="MediaBrowser_FollowModeOn">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="vehicleDate" context="global" characteristic="dynamic">
+    <Absolute name="year" min="2000" max="2255" unit="a" resolution="1"/>
+    <Absolute name="month" min="1" max="12" unit="mon" resolution="1"/>
+    <Absolute name="day" min="1" max="31" unit="d" resolution="1"/>
+  </Object>
+  <Object url="acceleratorKickDown" context="global" characteristic="dynamic">
+    <Activity name="acceleratorKickDown"/>
+  </Object>
+  <Object url="consumptionLongTermGeneral" context="global" characteristic="dynamic">
+    <Absolute name="distanceValue" min="INF" unit="" resolution=".01"/>
+    <Absolute name="speedValue" min="INF" unit="" resolution=".01"/>
+    <Absolute name="time" min="0" unit="min" resolution="1"/>
+    <Enumeration name="distanceValueState">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="distanceUnit">
+      <Member id="km"/>
+      <Member id="mi"/>
+    </Enumeration>
+    <Enumeration name="speedValueState">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="speedUnit">
+      <Member id="kmh"/>
+      <Member id="mph"/>
+    </Enumeration>
+  </Object>
+  <Object url="powermeter" context="global" characteristic="dynamic">
+    <Absolute name="powermeter" min="0" max="4080" unit="" resolution=".01"/>
+  </Object>
+  <Object url="unitTemperature" context="global" characteristic="dynamic">
+    <Enumeration name="temperatureUnit">
+      <Member id="celsius"/>
+      <Member id="fahrenheit"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="tyrePressures" context="global" characteristic="dynamic">
+    <Absolute name="pressureFrontLeft" min="-630" max="630" unit="" resolution="1"/>
+    <Absolute name="pressureFrontRight" min="-630" max="630" unit="" resolution="1"/>
+    <Absolute name="pressureRearLeft" min="-630" max="630" unit="" resolution="1"/>
+    <Absolute name="pressureRearRight" min="-630" max="630" unit="" resolution="1"/>
+    <Absolute name="pressureSpareWheel" min="-630" max="630" unit="" resolution="1"/>
+    <Enumeration name="pressureUnit">
+      <Member id="bar"/>
+      <Member id="psi"/>
+      <Member id="kPa"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="parkingBrake" context="global" characteristic="dynamic">
+    <Activity name="engaged"/>
+  </Object>
+  <Object url="unitTimeFormat" context="global" characteristic="dynamic">
+    <Enumeration name="clockFormat">
+      <Member id="format_24h"/>
+      <Member id="format_12AMPM"/>
+    </Enumeration>
+  </Object>
+  <Object url="vehicleSpeed" context="global" characteristic="dynamic">
+    <Absolute name="speed" min="0" max="511" unit="" resolution=".01"/>
+    <Enumeration name="unit">
+      <Member id="kmh"/>
+      <Member id="mph"/>
+    </Enumeration>
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+    </Enumeration>
+  </Object>
+  <Object url="Car_vehicleState" context="global" characteristic="dynamic">
+    <ListEntity name="Warning" typeRef="Car_vehicleStateEntry" required="false"/>
+  </Object>
+  <Object url="ExAc_Resources" context="global" characteristic="dynamic">
+    <ListEntity name="resources" typeRef="ExAc_resourceListItem" required="false"/>
+  </Object>
+  <Object url="wheelAngle" context="global" characteristic="dynamic">
+    <Absolute name="wheelAngle" min="-800" max="800" unit="&#xB0;" resolution="1"/>
+  </Object>
+  <Object url="currentOutputPower" context="global" characteristic="dynamic">
+    <Absolute name="currentOutputPower" min="0" max="1227" unit="kW" resolution=".1"/>
+  </Object>
+  <Object url="recommendedGear" context="global" characteristic="dynamic">
+    <Enumeration name="recommendedGear">
+      <Member id="Gear1"/>
+      <Member id="Gear2"/>
+      <Member id="Gear3"/>
+      <Member id="Gear4"/>
+      <Member id="Gear5"/>
+      <Member id="Gear6"/>
+      <Member id="Gear7"/>
+      <Member id="Gear8"/>
+      <Member id="Gear9"/>
+      <Member id="Gear10"/>
+      <Member id="NoRecommendation"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="fuelLevelState" context="global" characteristic="dynamic">
+    <Activity name="levelSensorState"/>
+  </Object>
+  <Object url="System_DayNight" context="global" characteristic="dynamic">
+    <Enumeration name="State">
+      <Member id="DayMode"/>
+      <Member id="NightMode"/>
+      <Member id="NotActive"/>
+    </Enumeration>
+  </Object>
+  <Object url="engineTypes" context="global" characteristic="dynamic">
+    <Enumeration name="primaryEngine">
+      <Member id="not_installed"/>
+      <Member id="petrol"/>
+      <Member id="gas"/>
+      <Member id="electric"/>
+      <Member id="unknown"/>
+      <Member id="not_supported"/>
+      <Member id="petrol_diesel"/>
+      <Member id="petrol_gasoline"/>
+      <Member id="gas_CNG"/>
+      <Member id="gas_LPG"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="secondaryEngine">
+      <Member id="not_installed"/>
+      <Member id="petrol"/>
+      <Member id="gas"/>
+      <Member id="electric"/>
+      <Member id="unknown"/>
+      <Member id="not_supported"/>
+      <Member id="petrol_diesel"/>
+      <Member id="petrol_gasoline"/>
+      <Member id="gas_CNG"/>
+      <Member id="gas_LPG"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="vehicleTime" context="global" characteristic="dynamic">
+    <Absolute name="hour" min="0" max="23" unit="h" resolution="1"/>
+    <Absolute name="minute" min="0" max="59" unit="min" resolution="1"/>
+  </Object>
+  <Function url="MediaBrowser_GetList">
+    <In>
+      <Absolute name="Offset" min="INF" unit="" resolution="1"/>
+    </In>
+    <Out>
+      <Absolute name="ModCount" min="INF" unit="" resolution="1"/>
+      <Absolute name="Offset" min="INF" unit="" resolution="1"/>
+      <ListEntity name="List" typeRef="MediaBrowser_Entry" required="false"/>
+    </Out>
+  </Function>
+  <Object url="System_RestrictionMode" context="global" characteristic="dynamic">
+    <Enumeration name="Mode">
+      <Member id="Standard"/>
+      <Member id="Chauffeur"/>
+      <Member id="ChildLock"/>
+    </Enumeration>
+  </Object>
+  <Object url="doorState" context="global" characteristic="dynamic">
+    <Absolute name="numberOfDoors" min="1" max="5" unit="" resolution="1"/>
+    <Enumeration name="lockstate">
+      <Member id="locked"/>
+      <Member id="noData"/>
+      <Member id="unlocked"/>
+    </Enumeration>
+    <Enumeration name="driverDoorState">
+      <Member id="closed"/>
+      <Member id="open"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="coDriverDoorState">
+      <Member id="closed"/>
+      <Member id="open"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="fondDoorLeftState">
+      <Member id="closed"/>
+      <Member id="open"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="fondDoorRightState">
+      <Member id="closed"/>
+      <Member id="open"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="hoodState">
+      <Member id="closed"/>
+      <Member id="open"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="trunkState">
+      <Member id="closed"/>
+      <Member id="open"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="Radio_TA" context="global" characteristic="dynamic">
+    <Absolute name="Frequency" min="INF" unit="Hz" resolution="1"/>
+    <Activity name="Active"/>
+    <Text name="StationName" regExp=".{0,20}"/>
+  </Object>
+  <Object url="serviceOil" context="global" characteristic="dynamic">
+    <Absolute name="distance" min="0" max="204700" unit="" resolution="1"/>
+    <Absolute name="time" min="0" max="2047" unit="d" resolution="1"/>
+    <Enumeration name="distanceState">
+      <Member id="noData"/>
+      <Member id="not_calculated"/>
+      <Member id="service_in"/>
+      <Member id="service_ago"/>
+    </Enumeration>
+    <Enumeration name="distanceUnit">
+      <Member id="noData"/>
+      <Member id="km"/>
+      <Member id="mi"/>
+    </Enumeration>
+    <Enumeration name="timeState">
+      <Member id="not_calculated"/>
+      <Member id="service_in"/>
+      <Member id="service_ago"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="Media_AvailableSources" context="global" characteristic="dynamic">
+    <ListEntity name="Sources" typeRef="Media_SourceState" required="false"/>
+  </Object>
+  <Object url="startStopState" context="global" characteristic="dynamic">
+    <Enumeration name="state">
+      <Member id="noData"/>
+      <Member id="idle"/>
+      <Member id="available"/>
+      <Member id="stopMode"/>
+      <Member id="pressClutch"/>
+      <Member id="confirmPresence"/>
+      <Member id="clutchEnablesStart"/>
+      <Member id="off"/>
+      <Member id="systemError"/>
+      <Member id="not_available"/>
+    </Enumeration>
+  </Object>
+  <Object url="unitDateFormat" context="global" characteristic="dynamic">
+    <Enumeration name="dateFormat">
+      <Member id="day_month_year"/>
+      <Member id="month_day_year"/>
+      <Member id="year_month_day"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="SPI_ConnectedDevice" context="global" characteristic="dynamic">
+    <Activity name="SPI_available"/>
+    <Activity name="AudioPlayback"/>
+    <Enumeration name="SPI_Type">
+      <Member id="not_connected"/>
+      <Member id="Mirrorlink"/>
+      <Member id="CarPlay"/>
+      <Member id="GAL"/>
+      <Member id="unknown"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Text name="SPI_Device" regExp=".{0,64}"/>
+  </Object>
+  <Object url="cycleConsumptionSecondary" context="global" characteristic="dynamic">
+    <Absolute name="value" min="INF" unit="" resolution=".01"/>
+    <Enumeration name="state">
+      <Member id="invalid"/>
+      <Member id="valid"/>
+      <Member id="maximum"/>
+      <Member id="not_calculated"/>
+      <Member id="initial"/>
+      <Member id="noData"/>
+    </Enumeration>
+    <Enumeration name="unit">
+      <Member id="l/100km"/>
+      <Member id="km/l"/>
+      <Member id="l/h"/>
+      <Member id="mpg_UK"/>
+      <Member id="mpg_US"/>
+      <Member id="gal/h"/>
+      <Member id="kg/100km"/>
+      <Member id="km/kg"/>
+      <Member id="kg/h"/>
+      <Member id="m3/100km"/>
+      <Member id="km/m3"/>
+      <Member id="m3/h"/>
+      <Member id="mi/lbs"/>
+      <Member id="lbs/h"/>
+      <Member id="mi/yd3"/>
+      <Member id="yd3/h"/>
+      <Member id="kWh/100km"/>
+      <Member id="km/kWh"/>
+      <Member id="kWh/mi"/>
+      <Member id="mi/kWh"/>
+      <Member id="kW"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Object url="gearboxOilTemperature" context="global" characteristic="dynamic">
+    <Absolute name="gearboxOilTemp" min="-58" max="196" unit="&#xB0;C" resolution="1"/>
+  </Object>
+  <Function url="Radio_StationNext">
+    <In/>
+    <Out/>
+  </Function>
+  <Object url="Sound_BalanceFader" context="global" characteristic="dynamic">
+    <Absolute name="Fader" min="INF" unit="" resolution="1"/>
+    <Absolute name="Balance" min="INF" unit="" resolution="1"/>
+  </Object>
+  <Object url="Radio_AMStations" context="global" characteristic="dynamic">
+    <ListEntity name="Stations" typeRef="Radio_Station" required="false"/>
+  </Object>
+  <Object url="Sound_VolumeSetup" context="global" characteristic="static">
+    <ListEntity name="VolumeRanges" typeRef="Sound_VolumeInformation" required="false"/>
+  </Object>
+  <Function url="GetImageByLocator">
+    <In>
+      <Absolute name="maxPixelX" min="0" unit="px" resolution="1"/>
+      <Absolute name="maxPixelY" min="0" unit="px" resolution="1"/>
+      <Text name="ResourceLocator"/>
+    </In>
+    <Out>
+      <Binary name="ResourceData" contentType="application/octet-stream"/>
+      <Enumeration name="Result">
+        <Member id="ok"/>
+        <Member id="error"/>
+        <Member id="locatorNotFound"/>
+        <Member id="systemNotReady"/>
+        <Member id="fileSizeToBig"/>
+      </Enumeration>
+      <Enumeration name="MimeType">
+        <Member id="image_png"/>
+        <Member id="image_jpg"/>
+        <Member id="image_bmp"/>
+        <Member id="image_gif"/>
+        <Member id="image_R4G4B4A4"/>
+        <Member id="image_R8G8B8A8"/>
+        <Member id="image_R8G8B8"/>
+        <Member id="unknown"/>
+      </Enumeration>
+    </Out>
+  </Function>
+  <Function url="Radio_SeekBackward">
+    <In/>
+    <Out/>
+  </Function>
+  <Function url="Sound_SetBalanceFader">
+    <In>
+      <Absolute name="Fader" min="INF" unit="" resolution="1"/>
+      <Absolute name="Balance" min="INF" unit="" resolution="1"/>
+    </In>
+    <Out/>
+  </Function>
+  <Object url="vehicleDate" context="global" characteristic="dynamic">
+    <Absolute name="year" min="2000" max="2255" unit="a" resolution="1"/>
+    <Absolute name="month" min="1" max="12" unit="mon" resolution="1"/>
+    <Absolute name="day" min="1" max="31" unit="d" resolution="1"/>
+  </Object>
+  <Object url="Radio_AMPresets" context="global" characteristic="dynamic">
+    <ListEntity name="Stations" typeRef="Radio_Preset" required="false"/>
+  </Object>
+  <Object url="Radio_FMPresets" context="global" characteristic="dynamic">
+    <ListEntity name="Stations" typeRef="Radio_Preset" required="false"/>
+  </Object>
+  <Object url="Media_PlayerState" context="global" characteristic="dynamic">
+    <Absolute name="TrackPosition" min="0" unit="ms" resolution="1"/>
+    <Enumeration name="State">
+      <Member id="Play"/>
+      <Member id="Pause"/>
+      <Member id="FastBackward"/>
+      <Member id="FastForward"/>
+      <Member id="NoTrack"/>
+      <Member id="Loading"/>
+    </Enumeration>
+    <Enumeration name="Type">
+      <Member id="Unknown"/>
+      <Member id="Audio"/>
+      <Member id="Video"/>
+      <Member id="Image"/>
+      <Member id="Folder"/>
+      <Member id="Playlist"/>
+      <Member id="PlaylistFolder"/>
+      <Member id="AudioFolder"/>
+      <Member id="VideoFolder"/>
+      <Member id="ImageFolder"/>
+      <Member id="ArtistFolder"/>
+      <Member id="AlbumFolder"/>
+      <Member id="TitleFolder"/>
+      <Member id="GenreFolder"/>
+      <Member id="FavoriteFolder"/>
+    </Enumeration>
+    <Text name="EntryID" regExp="[0-9]{0,20}"/>
+  </Object>
+  <Object url="unitTemperature" context="global" characteristic="dynamic">
+    <Enumeration name="temperatureUnit">
+      <Member id="celsius"/>
+      <Member id="fahrenheit"/>
+      <Member id="noData"/>
+    </Enumeration>
+  </Object>
+  <Function url="Sound_DecreaseVolume">
+    <In/>
+    <Out/>
+  </Function>
+  <Function url="ExAc_TouchToken">
+    <In>
+      <Text name="resourceID" regExp="[a-zA-Z0-9]{1..20}"/>
+    </In>
+    <Out/>
+  </Function>
+  <Function url="MediaBrowser_ChangeFolder">
+    <In>
+      <ListEntity name="Path" typeRef="MediaBrowser_Entry" required="false"/>
+    </In>
+    <Out/>
+  </Function>
+  <Object url="vehicleTime" context="global" characteristic="dynamic">
+    <Absolute name="hour" min="0" max="23" unit="h" resolution="1"/>
+    <Absolute name="minute" min="0" max="59" unit="min" resolution="1"/>
+  </Object>
+  <Object url="Radio_DABEnsembles" context="global" characteristic="dynamic">
+    <ListEntity name="Stations" typeRef="Radio_Station" required="false"/>
+  </Object>
+  <Object url="Radio_AvailableBands" context="global" characteristic="static">
+    <ListEntity name="Bands" typeRef="Radio_Band" required="false"/>
+  </Object>
+  <Object url="Context_States" context="global" characteristic="dynamic">
+    <ListEntity name="Contexts" typeRef="Context_State" required="false"/>
+  </Object>
+</List>
