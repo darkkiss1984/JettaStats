@@ -19,7 +19,6 @@ public class CarStatsService extends Service {
     private CarStatsLogger mStatsLogger;
     private OilTempMonitor mOilTempMonitor;
     private WheelStateMonitor mWheelStateMonitor;
-    private GearMonitor mGearMonitor;
     private final IBinder mBinder = new CarStatsBinder();
 
     public class CarStatsBinder extends Binder {
@@ -32,7 +31,6 @@ public class CarStatsService extends Service {
         WheelStateMonitor getWheelStateMonitor() {
             return mWheelStateMonitor;
         }
-        GearMonitor getGearMonitor() {return mGearMonitor;}
     }
 
     @Override
@@ -52,9 +50,6 @@ public class CarStatsService extends Service {
 
         mWheelStateMonitor = new WheelStateMonitor(this, new Handler());
         mStatsClient.registerListener(mWheelStateMonitor);
-
-        mGearMonitor = new GearMonitor(this,new Handler());
-        mStatsClient.registerListener(mGearMonitor);
 
         mStatsClient.start();
     }
@@ -81,11 +76,6 @@ public class CarStatsService extends Service {
         if (mOilTempMonitor != null) {
             mOilTempMonitor.close();
             mOilTempMonitor = null;
-        }
-
-        if (mGearMonitor != null) {
-            mGearMonitor.close();
-            mGearMonitor = null;
         }
 
         mStatsClient.stop();
